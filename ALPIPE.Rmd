@@ -88,7 +88,7 @@ similar_function = function(info,mle,num_points=60,existing_pt=NULL) {
   MLE_pred = similar_function_single(mle,times)
   BG_var = calculate_truncated_variance(MLE_pred[[1]],noise_BG)
   SC_var = calculate_truncated_variance(MLE_pred[[2]],noise_SC)
-  scale_factors = 1/BG_var*SC_var
+  scale_factors = 1/(BG_var*SC_var)
   print(scale_factors)
   determinant=numeric(n_samples)
   print(dim(df_y1)[2])
